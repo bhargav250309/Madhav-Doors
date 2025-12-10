@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhav Door - Coming Soon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #8B4513;     /* Rich wood brown */
+            --secondary: #D4A017;   /* Golden accent */
+            --dark: #2C1A0D;
+            --light: #F8F4F0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat fixed;
+            color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .coming-soon-container {
+            background-color: rgba(44, 26, 13, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            border: 2px solid var(--secondary);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            color: var(--secondary);
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            background: rgba(212, 160, 23, 0.2);
+            border: 2px solid var(--secondary);
+            border-radius: 15px;
+            padding: 20px 25px;
+            min-width: 120px;
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .time-box small {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.8;
+        }
+
+        .notify-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-control {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid var(--secondary);
+            color: white;
+            height: 55px;
+            border-radius: 50px;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            border: none;
+            padding: 12px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #e0b02a;
+            transform: translateY(-3px);
+        }
+
+        .social-links a {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            margin-top: 60px;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3.5rem;
+            }
+            .countdown {
+                gap: 15px;
+            }
+            .time-box {
+                padding: 15px;
+                min-width: 90px;
+            }
+            .time-box span {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="coming-soon-container">
+            <!-- Logo -->
+            <h1 class="logo">Madhav Door</h1>
+            <p class="tagline">Crafting Excellence in Every Entrance</p>
+            
+            <!-- Main Heading -->
+            <h2 class="mb-4 display-5 fw-light">Our New Website is <span class="text-warning">Coming Soon</span></h2>
+            <p class="lead mb-5">We're working hard to bring you the finest collection of premium wooden, designer, and security doors.</p>
+
+            <!-- Countdown Timer -->
+            <div class="countdown" id="countdown">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <small>Days</small>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <small>Hours</small>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <small>Minutes</small>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <small>Seconds</small>
+                </div>
+            </div>
+
+            <!-- Email Notification Form -->
+            <div class="notify-form">
+                <form class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                    <input type="email" class="form-control" placeholder="Enter your email for updates" required>
+                    <button type="submit" class="btn btn-primary">Notify Me</button>
+                </form>
+                <p class="mt-3 small">Be the first to know when we launch!</p>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links mt-5">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <p>&copy; 2025 Madhav Door. All Rights Reserved. | Premium Doors Manufacturer</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Set launch date (Change this to your actual launch date)
+        const launchDate = new Date("2025-02-01T00:00:00").getTime();
+
+        const countdown = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("countdown").innerHTML = "<h3>We're Live!</h3>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
